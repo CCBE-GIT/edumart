@@ -271,10 +271,10 @@ export default {
       this.errorMsg = ''
       try {
         await emailjs.send(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
+          'service_ux24lcq',
+          'template_e2za1io',
           { from_name: this.form.name, from_email: this.form.email, subject: this.form.subject, service: this.form.service, message: this.form.message },
-          'YOUR_PUBLIC_KEY'
+          'kijlXQ5ob1ylJ77hv'
         )
         this.successMsg = "Your message has been sent! We'll get back to you shortly."
         this.form = { name: '', email: '', subject: '', service: '', message: '' }
