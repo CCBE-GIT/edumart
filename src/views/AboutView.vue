@@ -38,7 +38,7 @@
           <div class="img-split-frame">
             <div class="img-split-frame__main">
               <img
-                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistic1.jpg"
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistics4.jpg"
                 alt="Warehouse operations"
               />
               <div class="img-split-frame__main-overlay"></div>
