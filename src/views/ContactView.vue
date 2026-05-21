@@ -90,7 +90,23 @@
                 </div>
                 <div>
                   <span class="contact-detail__label">{{ detail.label }}</span>
-                  <span class="contact-detail__value">{{ detail.value }}</span>
+
+                  <a
+                    v-if="detail.link"
+                    :href="detail.link"
+                    class="contact-detail__value contact-detail__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ detail.value }}
+                  </a>
+
+                  <span
+                    v-else
+                    class="contact-detail__value"
+                  >
+                    {{ detail.value }}
+                  </span>
                 </div>
               </div>
             </div>
@@ -210,9 +226,33 @@ export default {
         'Supply Chain Consultation',
       ],
       contactDetails: [
-        { label: 'Address', value: '[Company Address], Sri Lanka', vb: '0 0 24 24', svg: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>' },
-        { label: 'Phone',   value: '[Phone Number]',              vb: '0 0 24 24', svg: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>' },
-        { label: 'Email',   value: '[Email Address]',             vb: '0 0 24 24', svg: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>' },
+        { label: 'Address', value: 'No 265/1 Moratuwa Rd, Suwarapola, Piliyandala, Sri Lanka', vb: '0 0 24 24', svg: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>' },
+        {
+          label: 'Phone',
+          value: '011 218 5503',
+          link: 'tel:+94112185503',
+          vb: '0 0 24 24',
+          svg: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'
+        },
+
+        {
+          label: 'Whatsapp',
+          value: '071 264 6600',
+          link: 'https://wa.me/94712646600',
+          vb: '0 0 32 32',
+          svg: `
+            <path d="M19.11 17.21c-.29-.15-1.71-.84-1.98-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.33.22-.62.07-.29-.15-1.21-.45-2.31-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.43.9 1.43 2.57 3.54 6.21 4.96.87.38 1.55.6 2.08.77.87.28 1.66.24 2.28.15.69-.1 1.71-.7 1.95-1.38.24-.67.24-1.24.17-1.38-.07-.13-.26-.21-.55-.36z"/>
+            <path d="M16.03 3C8.85 3 3 8.74 3 15.82c0 2.48.72 4.89 2.08 6.96L3 29l6.39-2.04a13.1 13.1 0 0 0 6.64 1.8h.01c7.18 0 13.03-5.74 13.03-12.82C29.06 8.74 23.21 3 16.03 3z"/>
+          `
+        },
+
+        {
+          label: 'Email',
+          value: 'inquiry@edumart.lk',
+          link: 'mailto:inquiry@edumart.lk',
+          vb: '0 0 24 24',
+          svg: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>'
+        },
         { label: 'Hours',   value: 'Mon – Fri: 8:30 AM – 5:30 PM', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
       ],
       socialLinks: [
@@ -282,6 +322,15 @@ export default {
 .contact-detail__icon { width:44px; height:44px; background:rgba(45,184,154,.08); border:1px solid rgba(45,184,154,.18); border-radius:12px; display:grid; place-items:center; color:#2DB89A; flex-shrink:0; }
 .contact-detail__label { display:block; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#2DB89A; margin-bottom:.25rem; }
 .contact-detail__value { display:block; font-size:.95rem; color:rgba(10,22,40,.75); }
+.contact-detail__link {
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.contact-detail__link:hover {
+  color: #2DB89A;
+}
+
 
 /* ─── Social ─── */
 .social-media { margin-top:2rem; }

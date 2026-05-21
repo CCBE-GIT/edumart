@@ -122,7 +122,7 @@
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              <a href="mailto:info@edumart.lk">inquiry@edumart.lk</a>
+              <a href="mailto:inquiry@edumart.lk">inquiry@edumart.lk</a>
             </li>
             <li>
               <div class="contact-icon-wrap">
