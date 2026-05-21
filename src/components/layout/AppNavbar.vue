@@ -69,6 +69,7 @@ export default {
         { label: 'Home',       path: '/' },
         { label: 'About',      path: '/about' },
         { label: 'Services',   path: '/services' },
+        { label: 'Products',   path:  '/products'},
         { label: 'Industries', path: '/industries' },
         { label: 'Clients',    path: '/clients' },
         { label: 'Growth',     path: '/expansion' },
