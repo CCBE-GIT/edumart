@@ -31,6 +31,20 @@
           Get In Touch
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </router-link>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" @click="toggleTheme" :aria-label="'Switch to ' + (theme === 'light' ? 'dark' : 'light') + ' mode'">
+          <!-- Sun Icon (visible in dark mode) -->
+          <svg v-if="theme === 'dark'" class="theme-toggle__icon sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon Icon (visible in light mode) -->
+          <svg v-else class="theme-toggle__icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
         <button class="burger" :class="{ 'burger--open': menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -63,6 +77,7 @@ export default {
   name: 'AppNavbar',
   data() {
     return {
+      theme: 'light',
       scrolled: false,
       menuOpen: false,
       navItems: [
@@ -77,12 +92,22 @@ export default {
       ]
     }
   },
-  mounted()      { window.addEventListener('scroll', this.onScroll, { passive: true }) },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    // Initialize theme state from the <html> attribute
+    this.theme = document.documentElement.getAttribute('data-theme') || 'light';
+  },
   beforeUnmount(){ window.removeEventListener('scroll', this.onScroll) },
   methods: {
     onScroll()   { this.scrolled = window.scrollY > 60 },
     toggleMenu() { this.menuOpen = !this.menuOpen; document.body.style.overflow = this.menuOpen ? 'hidden' : '' },
-    closeMenu()  { this.menuOpen = false; document.body.style.overflow = '' }
+    closeMenu()  { this.menuOpen = false; document.body.style.overflow = '' },
+    toggleTheme() {
+      const newTheme = this.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      this.theme = newTheme;
+    }
   }
 }
 </script>
@@ -102,8 +127,8 @@ export default {
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  transition: background 0.4s ease, height 0.3s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
-  background: white;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, height 0.3s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+  background: var(--navbar-bg);
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -111,10 +136,10 @@ export default {
 /* ─── Scrolled ─── */
 .navbar--scrolled {
   height: var(--nav-height-sm);
-  /* background: rgba(11, 25, 41, 0.88); */
+  background: var(--navbar-scrolled-bg);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  box-shadow: 0 1px 0 rgba(45,184,154,0.2), 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 var(--navbar-border), 0 8px 32px rgba(0,0,0,0.15);
 }
 /* Blue → Teal gradient shimmer line */
 .navbar--scrolled::before {
@@ -160,7 +185,7 @@ export default {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(10, 22, 40, 0.45);
+  color: var(--text-muted-color);
   line-height: 1.5;
   padding-left: 2px;
 }
@@ -184,7 +209,7 @@ export default {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: black;
+  color: var(--navbar-text);
   border-radius: 5px;
   transition: all 0.2s;
   text-transform: uppercase;
@@ -194,7 +219,7 @@ export default {
 }
 .nav-link:hover {
   color: #2DB89A;
-  background: rgba(255,255,255,0.07);
+  background: rgba(45,184,154,0.08);
 }
 .nav-link--active {
   color: #2DB89A;
@@ -248,7 +273,7 @@ export default {
   flex-direction: column;
   gap: 4.5px;
   background: none;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid var(--border-card);
   cursor: pointer;
   padding: 8px;
   border-radius: 6px;
@@ -258,7 +283,7 @@ export default {
 
 .burger span {
   display: block; width: 18px; height: 1.5px;
-  background: black; border-radius: 2px;
+  background: var(--navbar-text); border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
   transform-origin: center;
 }
@@ -270,13 +295,13 @@ export default {
 .mobile-nav {
   position: absolute;
   top: 100%; left: 0; right: 0;
-  background: rgba(11,25,41,0.97);
+  background: var(--navbar-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-top: 2px solid transparent;
   background-clip: padding-box;
   border-image: linear-gradient(90deg, #1B6FBF, #2DB89A) 1;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.2rem 1.5rem 1.8rem;
   display: flex;
   flex-direction: column;
@@ -286,11 +311,11 @@ export default {
 .mobile-nav__link {
   display: flex; align-items: center; justify-content: space-between;
   font-size: 0.74rem; font-weight: 600;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-muted-color);
   padding: 0.8rem 0.4rem;
   letter-spacing: 0.1em; text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
   transition: color 0.2s;
 }
 .mobile-nav__link svg { opacity: 0.3; transition: opacity 0.2s, transform 0.2s; }
@@ -307,6 +332,36 @@ export default {
   transition: opacity 0.2s;
 }
 .mobile-cta:hover { opacity: 0.9; }
+
+/* ─── Theme Toggle Button ─── */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-card);
+  color: var(--navbar-text);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+.theme-toggle:hover {
+  background: rgba(45, 184, 154, 0.08);
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: scale(1.08) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(45, 184, 154, 0.15);
+}
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+.theme-toggle__icon {
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ─── Transitions ─── */
 .mobile-menu-enter-active { transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }

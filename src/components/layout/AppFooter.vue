@@ -222,8 +222,9 @@ export default {
 <style scoped>
 /* ─── Base ─── */
 .footer {
-  background: #fff;
+  background: var(--footer-bg);
   position: relative;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 /* ─── CTA Band ─── */
@@ -307,7 +308,7 @@ export default {
 /* ─── Main Grid ─── */
 .footer__main {
   padding: 4rem 0 2.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border-color);
 }
 
 .footer__grid {
@@ -346,9 +347,10 @@ export default {
 
 .footer__desc {
   font-size: 0.82rem;
-  color: #0B1929;
+  color: var(--text-body-color);
   line-height: 1.8;
   max-width: 280px;
+  transition: color 0.4s ease;
 }
 
 .footer__brand-divider {
@@ -364,7 +366,8 @@ export default {
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #081523;
+  color: var(--footer-text);
+  transition: color 0.4s ease;
 }
 
 .footer__badge-dot {
@@ -385,14 +388,14 @@ export default {
 
 .footer__social-icon {
   width: 34px; height: 34px;
-  background: rgba(45,184,154,0.07);
-  border: 1px solid rgba(45,184,154,0.15);
+  background: var(--footer-social-bg);
+  border: 1px solid var(--footer-social-border);
   border-radius: 8px;
   display: grid;
   place-items: center;
-  color: rgba(10,22,40,0.45);
+  color: var(--footer-text-muted);
   text-decoration: none;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
 }
 
 .footer__social-icon:hover {
@@ -425,7 +428,7 @@ export default {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.82rem;
-  color: #081523;
+  color: var(--footer-text);
   text-decoration: none;
   transition: color 0.2s, gap 0.2s;
 }
@@ -473,8 +476,9 @@ export default {
 
 .footer__services li span:last-child {
   font-size: 0.82rem;
-  color: #081523;
+  color: var(--footer-text);
   line-height: 1.4;
+  transition: color 0.4s ease;
 }
 
 /* ─── Contact ─── */
@@ -506,7 +510,7 @@ export default {
 .footer__contact a,
 .footer__contact span:last-child {
   font-size: 0.82rem;
-  color: #081523;
+  color: var(--footer-text);
   line-height: 1.6;
   text-decoration: none;
   transition: color 0.2s;
@@ -516,7 +520,7 @@ export default {
 
 /* ─── Bottom Bar ─── */
 .footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border-color);
   padding: 1.4rem 0;
 }
 
@@ -530,13 +534,15 @@ export default {
 
 .footer__copyright {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.2);
+  color: var(--footer-copyright);
+  transition: color 0.4s ease;
 }
 
 .footer__reg {
   font-size: 0.68rem;
-  color: rgba(255,255,255,0.13);
+  color: var(--footer-reg);
   letter-spacing: 0.05em;
+  transition: color 0.4s ease;
 }
 
 /* ─── Responsive ─── */

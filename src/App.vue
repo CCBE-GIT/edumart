@@ -48,29 +48,3 @@ export default {
   transform: translateY(-8px);
 }
 </style>
-```
-
----
-
-### Step 2 — Verify Your Folder Structure
-
-Make sure these files **all exist** at these exact paths inside your `src/` folder:
-```
-src/
-├── App.vue                                    ← replaced above
-├── main.js
-├── assets/
-│   └── css/
-│       └── main.css                           ← must exist!
-├── components/
-│   ├── layout/
-│   │   ├── AppNavbar.vue                      ← must exist!
-│   │   └── AppFooter.vue                      ← must exist!
-│   └── ui/
-│       └── BackToTop.vue                      ← must exist!
-├── views/
-│   ├── HomeView.vue
-│   ├── AboutView.vue
-│   └── ... (all other views)
-└── router/
-    └── index.js
