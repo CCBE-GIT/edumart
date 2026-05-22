@@ -162,8 +162,8 @@ export default {
       quickLinks: [
         { label: 'Home',          path: '/' },
         { label: 'About Us',      path: '/about' },
-        { label: 'Services',      path: '/services' },
-        { label: 'Products',      path: '/products' },
+        { label: 'Our Services',  path: '/services' },
+        { label: 'Our Products',  path: '/products' },
         { label: 'Industries',    path: '/industries' },
         { label: 'Our Clients',   path: '/clients' },
         { label: 'Future Growth', path: '/expansion' },
