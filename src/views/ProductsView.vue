@@ -127,7 +127,7 @@ export default {
         {
           name: "Kids Box New Generation British English – Pupil's Book Level 1",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
-          isbn: '000', edition: 'South Asian',
+          isbn: '9781009573566', edition: 'South Asian',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Pupils%20Book%20Level1.jpg',
         },
         {
@@ -145,7 +145,7 @@ export default {
         {
           name: "Kids Box New Generation British English – Activity Book Level 1",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
-          isbn: '000', edition: 'South Asian',
+          isbn: '9781009573764', edition: 'South Asian',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Activity%20Book%20Level%201.jpg',
         },
         {
@@ -159,6 +159,12 @@ export default {
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009573733', edition: 'South Asian',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Activity%20Book%20Level%204.jpg',
+        },
+        {
+          name: "Storyfun Student's Book 1 (with Online Activities & Home Fun Booklet 1)",
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781009796392', edition: 'South Asian',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Storyfun%20Students%20Book%201.jpg',
         },
         {
           name: "Storyfun Student's Book 2 (with Online Activities & Home Fun Booklet 2)",
