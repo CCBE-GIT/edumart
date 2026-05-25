@@ -8,6 +8,7 @@
     </router-view>
     <AppFooter />
     <BackToTop />
+    <CookieConsent />
   </div>
 </template>
 
@@ -15,12 +16,13 @@
 import AppNavbar from '@/components/layout/AppNavbar.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 import BackToTop from '@/components/ui/BackToTop.vue'
+import CookieConsent from '@/components/ui/CookieConsent.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 export default {
   name: 'App',
-  components: { AppNavbar, AppFooter, BackToTop },
+  components: { AppNavbar, AppFooter, BackToTop, CookieConsent },
   mounted() {
     AOS.init({
       duration: 800,
