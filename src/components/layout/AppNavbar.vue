@@ -6,7 +6,7 @@
       <router-link to="/" class="navbar__logo" @click="closeMenu">
         <div class="navbar__logo-wrap">
           <img
-            src="https://ik.imagekit.io/kp5tixhur/Edumart/logo"
+            src="https://ik.imagekit.io/kp5tixhur/Edumart/logo1.png"
             alt="Edumart"
             class="navbar__logo-img"
           />

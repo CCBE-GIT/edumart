@@ -120,8 +120,8 @@ export default {
       activeTab: 'all',
       tabs: [
         { key: 'all',       label: 'All Products',       vb: '0 0 24 24', svg: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>' },
-        { key: 'cambridge', label: 'Cambridge Press',    vb: '0 0 24 24', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
-        { key: 'sadeepa',   label: 'Sadeepa Publishers', vb: '0 0 24 24', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
+        //{ key: 'cambridge', label: 'Cambridge Press',    vb: '0 0 24 24', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
+        //{ key: 'sadeepa',   label: 'Sadeepa Publishers', vb: '0 0 24 24', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
       ],
       products: [
         {
@@ -222,13 +222,13 @@ export default {
         },
         {
           name: 'Phonics Reader 2',
-          publisher: 'Sadeepa Publishers (Pvt) Ltd', publisherShort: 'Sadeepa',
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9789553749239', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Phonics%20Reader%202.jpeg',
         },
         {
           name: 'Phonics Reader 3',
-          publisher: 'Sadeepa Publishers (Pvt) Ltd', publisherShort: 'Sadeepa',
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9789553749246', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Phonics%20Reader%203.jpg',
         },
@@ -238,16 +238,16 @@ export default {
   computed: {
     filteredProducts() {
       if (this.activeTab === 'all')       return this.products
-      if (this.activeTab === 'cambridge') return this.products.filter(p => p.publisher === 'Cambridge University Press')
-      if (this.activeTab === 'sadeepa')   return this.products.filter(p => p.publisher.includes('Sadeepa'))
+      //if (this.activeTab === 'cambridge') return this.products.filter(p => p.publisher === 'Cambridge University Press')
+      //if (this.activeTab === 'sadeepa')   return this.products.filter(p => p.publisher.includes('Sadeepa'))
       return this.products
     },
   },
   methods: {
     getCount(key) {
       if (key === 'all')       return this.products.length
-      if (key === 'cambridge') return this.products.filter(p => p.publisher === 'Cambridge University Press').length
-      if (key === 'sadeepa')   return this.products.filter(p => p.publisher.includes('Sadeepa')).length
+      //if (key === 'cambridge') return this.products.filter(p => p.publisher === 'Cambridge University Press').length
+      //if (key === 'sadeepa')   return this.products.filter(p => p.publisher.includes('Sadeepa')).length
       return 0
     },
     getPublisherClass(publisher) {
