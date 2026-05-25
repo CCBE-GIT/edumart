@@ -92,7 +92,7 @@
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
-              <span>No 265/1 Moratuwa Rd, Suwarapola, Piliyandala,<br/>Sri Lanka</span>
+              <span>No 265/1, Moratuwa Rd, Suwarapola, Piliyandala,<br/>Sri Lanka</span>
             </li>
             <li>
               <div class="contact-icon-wrap">
