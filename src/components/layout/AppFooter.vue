@@ -26,7 +26,7 @@
         <div class="footer__brand">
           <router-link to="/" class="footer__logo">
             <img
-              src="https://ik.imagekit.io/kp5tixhur/Edumart/logo"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/logo1.png"
               alt="Edumart"
               class="footer__logo-img"
               style="height:40px; width:auto; display:block;"
