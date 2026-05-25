@@ -226,7 +226,7 @@ export default {
         'Supply Chain Consultation',
       ],
       contactDetails: [
-        { label: 'Address', value: 'No 265/1 Moratuwa Rd, Suwarapola, Piliyandala, Sri Lanka', vb: '0 0 24 24', svg: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>' },
+        { label: 'Address', value: 'No 265/1, Moratuwa Rd, Suwarapola, Piliyandala, Sri Lanka', vb: '0 0 24 24', svg: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>' },
         {
           label: 'Phone',
           value: '+94 11 218 5503',
