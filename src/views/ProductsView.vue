@@ -226,18 +226,18 @@ export default {
           isbn: '9781009514064', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Super%20Safari%20Level%203%20Activity%20Book.jpg',
         },
-        {
+        /*{
           name: 'Phonics Reader 2',
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9789553749239', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Phonics%20Reader%202.jpeg',
-        },
-        {
+        },*/
+        /*{
           name: 'Phonics Reader 3',
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9789553749246', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Phonics%20Reader%203.jpg',
-        },
+        },*/
       ],
     }
   },
