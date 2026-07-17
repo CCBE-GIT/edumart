@@ -89,6 +89,7 @@ export default {
         { label: 'Clients',    path: '/clients' },
         { label: 'Growth',     path: '/expansion' },
         { label: 'Investors',  path: '/investors' },
+        { label: 'Distribution Centers',    path: '/distribution-centers' },
       ]
     }
   },
@@ -205,7 +206,7 @@ export default {
 }
 
 .nav-link {
-  padding: 0.4rem 1.5rem;
+  padding: 0.4rem 0.85rem;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -295,6 +296,8 @@ export default {
 .mobile-nav {
   position: absolute;
   top: 100%; left: 0; right: 0;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
   background: var(--navbar-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -370,9 +373,13 @@ export default {
 .mobile-menu-leave-to      { opacity: 0; transform: translateY(-12px); }
 
 /* ─── Breakpoints ─── */
-@media (max-width: 1100px) { .nav-link { font-size: 0.62rem; padding: 0.38rem 0.58rem; } }
-@media (max-width: 940px)  { .btn-cta  { display: none; } }
-@media (max-width: 768px)  {
+@media (max-width: 1300px) {
+  .nav-link {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+@media (max-width: 1150px) {
   .burger { display: flex; }
   .navbar__links { display: none; }
   .navbar { height: 54px; }
@@ -383,5 +390,5 @@ export default {
 }
 
 .hide-mobile { display: flex; }
-@media (max-width: 768px) { .hide-mobile { display: none !important; } }
+@media (max-width: 1150px) { .hide-mobile { display: none !important; } }
 </style>

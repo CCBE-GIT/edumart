@@ -8,6 +8,7 @@ import ExpansionView  from '@/views/ExpansionView.vue'
 import InvestorsView  from '@/views/InvestorsView.vue'
 import ContactView    from '@/views/ContactView.vue'
 import ProductsView   from '@/views/ProductsView.vue'
+import DistributionView from '@/views/DistributionView.vue'
 
 const routes = [
   { path: '/',           name: 'Home',       component: HomeView,       meta: { title: 'Edumart (Pvt) Ltd — Integrated Supply Chain Solutions' } },
@@ -19,6 +20,7 @@ const routes = [
   { path: '/investors',  name: 'Investors',  component: InvestorsView,  meta: { title: 'Investor Relations — Edumart (Pvt) Ltd' } },
   { path: '/contact',    name: 'Contact',    component: ContactView,    meta: { title: 'Contact Us — Edumart (Pvt) Ltd' } },
   { path: '/products',   name: 'Products',   component: ProductsView,   meta: { title: 'Products — Edumart (Pvt) Ltd' } },
+  { path: '/distribution-centers', name: 'DistributionCenters', component: DistributionView, meta: { title: 'Distribution Centers — Edumart (Pvt) Ltd' } },
   // 404 catch-all
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ]

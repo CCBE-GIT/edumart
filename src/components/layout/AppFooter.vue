@@ -168,6 +168,7 @@ export default {
         { label: 'Our Clients',   path: '/clients' },
         { label: 'Future Growth', path: '/expansion' },
         { label: 'Investors',     path: '/investors' },
+        { label: 'Distribution Centers', path: '/distribution-centers' },
         { label: 'Contact',       path: '/contact' },
       ],
       services: [
