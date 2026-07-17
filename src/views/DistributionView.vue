@@ -246,7 +246,7 @@ export default {
         },
         {
           name: 'Matara Center',
-          address: 'No: 352, Kumarathunga Mw, Matara, 81000',
+          address: 'No 352, Kumarathunga Mw, Matara, 81000',
           phone1: '+94 71 399 9666',
           phone2: '+94 71 264 6600',
           mapUrl: 'https://www.google.com/maps/place/Cambridge+College+of+British+English+-+Matara+Branch/@5.9462457,80.5332676,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae13fc54e40cd0f:0x4f157d7ce1ff2d01!8m2!3d5.9462457!4d80.5358425!16s%2Fg%2F11kk73mbnd?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D',
