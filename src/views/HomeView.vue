@@ -284,6 +284,47 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════ AWARDS ══════════════════════════════ -->
+    <section class="section-pad awards-section">
+      <div class="awards-section__bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="text-center" data-aos="fade-up">
+          <p class="section-eyebrow light">Recognition &amp; Accolades</p>
+          <h2 class="section-heading light">Our <em>Awards</em></h2>
+          <div class="section-rule centered"></div>
+          <p class="intro-text light">
+            Proud milestones that reflect our commitment to excellence,
+            innovation, and trusted partnerships across Sri Lanka.
+          </p>
+        </div>
+
+        <div class="awards-grid">
+          <div
+            v-for="(award, i) in awards"
+            :key="i"
+            class="award-card"
+            :data-aos="'fade-up'"
+            :data-aos-delay="i * 80"
+          >
+            <div class="award-card__img-wrap">
+              <img :src="award.image" :alt="award.org" class="award-card__img" />
+              <div class="award-card__img-overlay"></div>
+              <div class="award-card__year-badge">{{ award.year }}</div>
+            </div>
+            <div class="award-card__body">
+              <div class="award-card__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+              </div>
+              <p class="award-card__org">{{ award.org }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <br>
+
   </main>
 </template>
 
@@ -371,6 +412,23 @@ export default {
         'Cambridge College of British English International (PVT) Ltd',
         'Cambridge College of British English',
         'Cambridge College of Information Technology',
+      ],
+      awards: [
+        {
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Awards/edumart%20Awards%201.jpeg',
+          year: '2026',
+          org: 'Cambridge English Leadership Conference (CELC) 2026',
+        },
+        // {
+        //   image: 'https://placehold.co/480x300/0F2236/2DB89A?text=Award+Image',
+        //   year: '2024',
+        //   org: 'National Supply Chain Excellence Awards',
+        // },
+        // {
+        //   image: 'https://placehold.co/480x300/0F2236/2DB89A?text=Award+Image',
+        //   year: '2025',
+        //   org: 'Sri Lanka Logistics Council',
+        // },
       ]
     }
   },
@@ -778,6 +836,99 @@ export default {
   pointer-events: none; z-index: 0;
 }
 
+/* ── Awards ── */
+.awards-section { position:relative; overflow:hidden; }
+.awards-section__bg {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg,#0A1628 0%,#0F2236 55%,#081523 100%);
+  z-index:0;
+}
+.awards-section__bg::before {
+  content:''; position:absolute;
+  top:50%; right:-180px; transform:translateY(-50%);
+  width:480px; height:480px; border-radius:50%;
+  background:radial-gradient(ellipse,rgba(45,184,154,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.intro-text.light { color:rgba(255,255,255,.5); }
+
+.awards-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.8rem;
+  margin-top:3rem;
+}
+
+.award-card {
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  overflow:hidden;
+  transition:all .35s ease;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.award-card:hover {
+  transform:translateY(-8px);
+  border-color:rgba(45,184,154,.3);
+  background:rgba(45,184,154,.05);
+  box-shadow:0 22px 52px rgba(10,22,40,.35), 0 0 0 1px rgba(45,184,154,.12);
+}
+
+/* Image area */
+.award-card__img-wrap {
+  position:relative;
+  width:100%; height:450px;
+  overflow:hidden;
+}
+.award-card__img {
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+  transition:transform .55s ease;
+}
+.award-card:hover .award-card__img { transform:scale(1.06); }
+.award-card__img-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(10,22,40,.1) 0%,rgba(10,22,40,.65) 100%);
+}
+
+/* Year badge */
+.award-card__year-badge {
+  position:absolute;
+  top:14px; right:14px;
+  background:linear-gradient(135deg,#1B6FBF,#2DB89A);
+  color:#fff;
+  font-family:var(--font-display,'Playfair Display',Georgia,serif);
+  font-size:1rem; font-weight:700; letter-spacing:.02em;
+  padding:.3rem .75rem;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(27,111,191,.45);
+  z-index:2;
+}
+
+/* Body */
+.award-card__body {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1.35rem 1.5rem;
+}
+.award-card__icon {
+  width:40px; height:40px; flex-shrink:0;
+  background:rgba(45,184,154,.12);
+  border:1px solid rgba(45,184,154,.22);
+  border-radius:10px;
+  display:grid; place-items:center;
+  color:#2DB89A;
+  transition:background .25s;
+}
+.award-card:hover .award-card__icon { background:rgba(45,184,154,.22); }
+.award-card__org {
+  font-size:.88rem; font-weight:600;
+  color:rgba(255,255,255,.8);
+  line-height:1.45;
+}
+
 /* ── Responsive ── */
 @media (max-width:1024px) {
   .hero__inner { gap:2.5rem; }
@@ -785,6 +936,7 @@ export default {
   .services-grid > *:last-child:nth-child(3n+1) { grid-column:auto; }
   .why-section__layout { gap:3rem; }
   .clients-grid { grid-template-columns:repeat(2,1fr); }
+  .awards-grid { grid-template-columns:repeat(2,1fr); }
   .about-snippet__inner { gap:3rem; }
 }
 @media (max-width:768px) {
@@ -815,6 +967,7 @@ export default {
   .why-section__layout { grid-template-columns:1fr; gap:2.5rem; }
   .why-section__grid { grid-template-columns:1fr; }
   .clients-grid { grid-template-columns:1fr; gap:1.2rem; }
+  .awards-grid { grid-template-columns:1fr; gap:1.2rem; }
   /* Image 1 */
   .home-img--split { margin-bottom: 1.4rem; }
   .home-img__split-frame { height:210px; }
