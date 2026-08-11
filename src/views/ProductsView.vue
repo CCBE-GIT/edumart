@@ -134,13 +134,19 @@ export default {
           name: "Kids Box New Generation British English – Pupil's Book Level 2",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009573597', edition: 'South Asian',
-          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Pupils%20Book%20Level%202.jpg', 
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Pupils%20Book%20Level%202%20remove.png', 
         },
         {
           name: "Kids Box New Generation British English – Pupil's Book Level 4",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009573610', edition: 'South Asian',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Pupils%20Book%20Level%204.png',
+        },
+        {
+          name: "Kids Box New Generation British English - Pupil's Book Level 6",
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781009573634', edition: 'South Asian',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Kids%20Box%20New%20Generation%20Level%206.jpg',
         },
         {
           name: "Kids Box New Generation British English – Activity Book Level 1",
@@ -161,6 +167,12 @@ export default {
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Activity%20Book%20Level%204.jpg',
         },
         {
+          name: "Kids Box New Generation British English - Activity Book Level 6",
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781009573641', edition: 'South Asian',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Kids%20Box%20New%20Generation%20Level%206%20new.jpg',
+        },
+        {
           name: "Storyfun Student's Book 1 (with Online Activities & Home Fun Booklet 1)",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009796392', edition: 'South Asian',
@@ -176,7 +188,7 @@ export default {
           name: "Storyfun Student's Book 4 (with Online Activities & Home Fun Booklet 4)",
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009793537', edition: 'South Asian',
-          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Storyfun%20Students%20Book%204.jpg',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Storyfun%20Students%20Book%204%20remove.png',
         },
         {
           name: "Storyfun Student's Book 6 (with Online Activities & Home Fun Booklet 6)",
@@ -188,7 +200,7 @@ export default {
           name: 'Interchange Fifth Edition Level Intro',
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009214421', edition: '5th Edition',
-          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Interchange%20Fifth%20Edition%20Level%20Intro.jpg',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Interchange%20Fifth%20Edition%20Level%20Intro%20remove.png',
         },
         {
           name: "Super Safari Level 1 Pupil's Book",
@@ -225,6 +237,24 @@ export default {
           publisher: 'Cambridge University Press', publisherShort: 'CUP',
           isbn: '9781009514064', edition: '1st Edition',
           image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Super%20Safari%20Level%203%20Activity%20Book.jpg',
+        },
+        {
+          name: 'Complete Key for Schools 2nd Edition',
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781009842839', edition: '1st Edition',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Complete%20Key%20for%20Schools%202nd%20edition.jpg',
+        },
+        {
+          name: 'Complete Preliminary Second Edition',
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781009325431', edition: '1st Edition',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Complete%20Preliminary%202nd%20edition.jpg',
+        },
+        {
+          name: 'Click Start 2 Computer Science for Schools',
+          publisher: 'Cambridge University Press', publisherShort: 'CUP',
+          isbn: '9781108855631', edition: '1st Edition',
+          image: 'https://ik.imagekit.io/kp5tixhur/Edumart/Edumart-Products/Click%20Start%202%20Computer%20Science%20for%20Schools.jpg',
         },
         /*{
           name: 'Phonics Reader 2',
